@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Sultan Fragrances</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background:#0f0f0f;
+    color:#fff;
+}
+
+/* HEADER */
+header{
+    text-align:center;
+    padding:60px 20px;
+    background:#000;
+}
+
+header h1{
+    color:#d4af37;
+    letter-spacing:3px;
+}
+
+header p{
+    color:#aaa;
+    letter-spacing:4px;
+    font-size:13px;
+    text-transform:uppercase;
+}
+
+/* PRODUCTOS */
+.contenedor{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    padding:40px;
+}
+
+.producto{
+    background:#161616;
+    border-radius:12px;
+    padding:20px;
+    text-align:center;
+    position:relative;
+    border:1px solid #222;
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.producto:hover{
+    transform:translateY(-6px);
+    border-color:#d4af37;
+}
+
+.producto img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+.etiqueta{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:#d4af37;
+    color:#000;
+    font-size:12px;
+    padding:5px 10px;
+    border-radius:4px;
+    font-weight:bold;
+}
+
+.marca{
+    color:#aaa;
+    font-size:13px;
+}
+
+.precio{
+    font-size:22px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.boton{
+    display:inline-block;
+    padding:10px 20px;
+    background:#000;
+    color:#fff;
+    border:1px solid #d4af37;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.boton:hover{
+    background:#d4af37;
+    color:#000;
+}
+
+/* MODAL */
+#modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.85);
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+}
+
+.modal-content{
+    background:#111;
+    max-width:600px;
+    width:90%;
+    padding:30px;
+    border-radius:10px;
+    position:relative;
+    border:1px solid #d4af37;
+}
+
+.cerrar{
+    position:absolute;
+    top:15px;
+    right:20px;
+    cursor:pointer;
+    font-size:22px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#000;
+    color:#777;
+    margin-top:40px;
+    font-size:13px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>BLACK SULTAN</h1>
+<p>Lujo Árabe Sin Límites</p>
+</header>
+
+<section class="contenedor">
+
+<div class="producto" onclick="abrirModal('Odyssey Spectra', descripcion1)">
+<div class="etiqueta">Nuevo</div>
+<img src="img/odyssey.jpg">
+<h3>Odyssey Spectra</h3>
+<p class="marca">Armaf</p>
+<p class="precio">$32.000</p>
+<a class="boton" href="https://wa.me/56923812757?text=Hola,%20quiero%20Odyssey%20Spectra%20100ml" target="_blank">Consultar</a>
+</div>
+
+<div class="producto" onclick="abrirModal('Asad Bourbon', descripcion2)">
+<div class="etiqueta">Nuevo</div>
+<img src="img/asad-bourbon.jpg">
+<h3>Asad Bourbon</h3>
+<p class="marca">Lattafa</p>
+<p class="precio">$35.000</p>
+<a class="boton" href="https://wa.me/56923812757?text=Hola,%20quiero%20Asad%20Bourbon%20100ml" target="_blank">Consultar</a>
+</div>
+
+<div class="producto" onclick="abrirModal('Club de Nuit Intense Man', descripcion3)">
+<img src="img/club-de-nuit.jpg">
+<h3>Club de Nuit Intense Man</h3>
+<p class="marca">Armaf</p>
+<p class="precio">$37.000</p>
+<a class="boton" href="https://wa.me/56923812757?text=Hola,%20quiero%20Club%20de%20Nuit%20100ml" target="_blank">Consultar</a>
+</div>
+
+<div class="producto" onclick="abrirModal('Khamrah Qahwa', descripcion4)">
+<div class="etiqueta">Nuevo</div>
+<img src="img/khamrah-qahwa.jpg">
+<h3>Khamrah Qahwa</h3>
+<p class="marca">Lattafa</p>
+<p class="precio">$33.000</p>
+<a class="boton" href="https://wa.me/56923812757?text=Hola,%20quiero%20Khamrah%20Qahwa%20100ml" target="_blank">Consultar</a>
+</div>
+
+<div class="producto" onclick="abrirModal('His Confession', descripcion5)">
+<div class="etiqueta">Nuevo</div>
+<img src="img/his-confession.jpg">
+<h3>His Confession</h3>
+<p class="marca">Lattafa</p>
+<p class="precio">$35.000</p>
+<a class="boton" href="https://wa.me/56923812757?text=Hola,%20quiero%20His%20Confession%20100ml" target="_blank">Consultar</a>
+</div>
+
+<div class="producto" onclick="abrirModal('Fakhar Platin', descripcion6)">
+<img src="img/fakhar-platin.jpg">
+<h3>Fakhar Platin</h3>
+<p class="marca">Lattafa</p>
+<p class="precio">$27.000</p>
+<a class="boton" href="https://wa.me/56923812757?text=Hola,%20quiero%20Fakhar%20Platin%20100ml" target="_blank">Consultar</a>
+</div>
+
+</section>
+
+<!-- MODAL -->
+<div id="modal">
+<div class="modal-content">
+<span class="cerrar" onclick="cerrarModal()">✕</span>
+<h2 id="modalTitulo" style="color:#d4af37;"></h2>
+<p id="modalDescripcion" style="line-height:1.6; color:#ccc;"></p>
+</div>
+</div>
+
+<footer>
+© 2026 Black Sultan Fragrances
+</footer>
+
+<script>
+
+const descripcion1 = `Fragancia Oriental Especiada unisex (2024).
+Salida: canela, manzana y bergamota.
+Corazón: canela, lavanda, muguete y flor de azahar.
+Fondo: tabaco, haba tonka, vainilla, ámbar y pachulí.`;
+
+const descripcion2 = `Oriental Especiada masculina (2025).
+Salida: lavanda, pimienta rosa y ciruela Mirabel.
+Corazón: cacao, davana y nuez moscada.
+Fondo: vainilla Bourbon, ámbar y vetiver.`;
+
+const descripcion3 = `Amaderada Especiada (2015).
+Salida: limón, grosellas negras, manzana, bergamota y piña.
+Corazón: rosa, jazmín y abedul.
+Fondo: vainilla, ámbar gris, almizcle y pachulí.`;
+
+const descripcion4 = `Unisex (2023).
+Salida: canela, cardamomo y jengibre.
+Corazón: praliné, frutas confitadas y flores blancas.
+Fondo: vainilla, café, haba tonka, benjuí y almizcle.`;
+
+const descripcion5 = `Oriental Amaderada masculina (2024).
+Salida: canela, lavanda y mandarina.
+Corazón: iris, benjuí, ciprés y Mahonial.
+Fondo: vainilla, haba tonka, ámbar, cedro, incienso y pachulí.`;
+
+const descripcion6 = `Frescura especiada-cítrica con corazón exótico
+y fondo cálido amaderado y ahumado.
+Moderna, elegante y con carácter contemporáneo.`;
+
+function abrirModal(titulo, descripcion){
+    document.getElementById("modal").style.display="flex";
+    document.getElementById("modalTitulo").innerText=titulo;
+    document.getElementById("modalDescripcion").innerText=descripcion;
+}
+
+function cerrarModal(){
+    document.getElementById("modal").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
